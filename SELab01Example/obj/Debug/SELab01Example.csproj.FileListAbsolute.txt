@@ -1,0 +1,8 @@
+c:\users\acer\documents\visual studio 2015\Projects\SELab01Example\SELab01Example\bin\Debug\SELab01Example.exe.config
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\bin\Debug\SELab01Example.exe
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\bin\Debug\SELab01Example.pdb
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\bin\Debug\nunit.framework.dll
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\bin\Debug\nunit.framework.xml
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\obj\Debug\SELab01Example.csprojResolveAssemblyReference.cache
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\obj\Debug\SELab01Example.exe
+C:\Users\ACER\Documents\Visual Studio 2015\Projects\SELab01Example\SELab01Example\obj\Debug\SELab01Example.pdb
