@@ -40,20 +40,20 @@ namespace SELab01Example
                 result = line.Split(':');
                 result = result[1].Trim().Split();
                 string type = result[1].Trim();
-                int t = 0;
+                Goods t = null;
                 switch (type)
                 {
                     case "REG":
-                        t = Goods.REGULAR;
+                        t = new GoodsREGULAR(result[0]);
                         break;
                     case "SAL":
-                        t = Goods.SALE;
+                        t = new GoodsSALE(result[0]);
                         break;
                     case "SPO":
-                        t = Goods.SPECIAL_OFFER;
+                        t = new GoodsSPECIAL_OFFER(result[0]);
                         break;
                 }
-                g[i] = new Goods(result[0], t);
+                g[i] = t;
             }
             // read items count
             // Пропустить комментарии

@@ -30,5 +30,18 @@ namespace SELab01Example
         {
             return _Goods;
         }
+        public double GetSum()
+        {
+            double get_sum = getQuantity() * getPrice();
+            return get_sum;
+        }
+        public int GetBonus()
+        {
+            return _Goods.GetBonus(_quantity, _price);
+        }
+        public double GetDiscount()
+        {
+            return _Goods.GetDiscount(_quantity, _price);
+        }
     }
 }

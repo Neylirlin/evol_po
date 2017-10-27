@@ -11,7 +11,7 @@ namespace SELab01ExampleTest
     [TestFixture]
     public class test
     {
-        [Test()]
+/*        [Test()]
         public void Test_PepsiCola()
         {
             Goods cola = new Goods("Cola", Goods.REGULAR);
@@ -109,6 +109,7 @@ namespace SELab01ExampleTest
             string actual = b1.statement();
             string expected = "Счет для test\n\tНазвание\tЦена\tКол-воСтоимость\tСкидка\tСумма\tБонус\n\tCola\t\t65\t6\t390\t21,7\t368,3\t19\n\tPepsi\t\t50\t3\t150\t0\t150\t1\n\tFanta\t\t35\t1\t35\t0\t35\t1\nСумма счета составляет 553,3\nВы заработали 21 бонусных баллов";
             Assert.AreEqual(expected, actual);
-        }
+        }*/
+
     }
 }

@@ -49,6 +49,9 @@
     <Compile Include="Bill.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Goods.cs" />
+    <Compile Include="GoodsREGULAR.cs" />
+    <Compile Include="GoodsSALE.cs" />
+    <Compile Include="GoodsSPECIAL_OFFER.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
