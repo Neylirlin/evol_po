@@ -2,10 +2,11 @@
 
 namespace SELab01Example
 {
-    internal class GoodsSPECIAL_OFFER : Goods
+    public class GoodsSPECIAL_OFFER : Goods
     {
         public GoodsSPECIAL_OFFER(string title) : base(title)
         {
+
         }
 
        public override int GetBonus(int _quantity, double _price)

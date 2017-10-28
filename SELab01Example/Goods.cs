@@ -21,7 +21,5 @@ namespace SELab01Example
         }
         public abstract int GetBonus(int _quantity, double _price);
         public abstract double GetDiscount(int _quantity, double _price);
-
-
     }
 }

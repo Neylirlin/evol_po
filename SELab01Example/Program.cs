@@ -24,7 +24,8 @@ namespace SELab01Example
             result = line.Split(':');
             int bonus = Convert.ToInt32(result[1].Trim());
             Customer customer = new Customer(name, bonus);
-            Bill b = new Bill(customer);
+            IPresenter p = new TXTPresenter();
+            BillGenerator b = new BillGenerator(customer, p);
             // read goods count
             line = sr.ReadLine();
             result = line.Split(':');
@@ -77,7 +78,7 @@ namespace SELab01Example
                 int qty = Convert.ToInt32(result[2].Trim());
                 b.addGoods(new Item(g[gid - 1], qty, price));
             }
-            string bill = b.statement();
+            string bill = b.GenerateBill();
             Console.WriteLine(bill);
             Console.ReadKey();
         }

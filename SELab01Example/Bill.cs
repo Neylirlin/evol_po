@@ -6,21 +6,28 @@ using System.Threading.Tasks;
 
 namespace SELab01Example
 {
-    public class Bill
+    public class BillGenerator
     {
+        IPresenter p;
         private List<Item> _items;
-        private Customer _customer;
-        public Bill(Customer customer)
+        public Customer _customer;
+        public BillGenerator(Customer customer)
         {
-            this._customer = customer;
-            this._items = new List<Item>();
+            _customer = customer;
+            _items = new List<Item>();
         }
+
+        public BillGenerator(Customer customer, IPresenter p) : this(customer)
+        {
+            this.p = p;
+        }
+
         public void addGoods(Item arg)
         {
             _items.Add(arg);
         }
         #region FormationOfHeadersAndAccountElements
-        public string GetHeader()
+/*        public string GetHeader()
         {
             string result = "Счет для " + _customer.getName() + "\n" + "\t" + "Название" + "\t" + "Цена" +
             "\t" + "Кол-во" + "Стоимость" + "\t" + "Скидка" +
@@ -42,7 +49,7 @@ namespace SELab01Example
                 "\t" + discount.ToString() + "\t" + thisAmount.ToString() +
                 "\t" + bonus.ToString() + "\n";
             return result;
-        }
+        }*/
         #endregion
 
         public double GetUsedBonus(Item each, double thisAmount, double discount)
@@ -59,18 +66,18 @@ namespace SELab01Example
             return usedBonus;
         }
 
-        public String statement()
+        public string GenerateBill()
         {
             double totalAmount = 0;
             int totalBonus = 0;
             List<Item>.Enumerator items = _items.GetEnumerator();
-            string result = GetHeader();
+            string result = p.GetHeader(_customer.getName());
             while (items.MoveNext())
             {
                 double sum_with_discount = 0;
                 double usedBonus = 0;
                 double thisAmount = 0;
-                Item each = (Item)items.Current;
+                Item each = items.Current;
                 //определить сумму для каждой строки
                 double discount = each.GetDiscount();
                 int bonus = each.GetBonus();
@@ -79,16 +86,15 @@ namespace SELab01Example
                 usedBonus = GetUsedBonus(each, sum_with_discount, discount);
                 thisAmount = sum_with_discount - usedBonus;
                 //показать результаты
-                result += GetItemString(thisAmount, discount, bonus, each);
+                result += p.GetItemString(thisAmount, discount, bonus, each);
                 totalAmount += thisAmount;
                 totalBonus += bonus;
             }
             //добавить нижний колонтитул
-            result += GetFooter(totalAmount, totalBonus);
+            result += p.GetFooter(totalAmount, totalBonus);
             //Запомнить бонус клиента
             _customer.receiveBonus(totalBonus);
             return result;
         }
-
     }
 }

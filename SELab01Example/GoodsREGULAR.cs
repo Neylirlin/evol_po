@@ -6,6 +6,7 @@ namespace SELab01Example
     {
         public GoodsREGULAR(string title) : base(title)
         {
+
         }
 
         public override int GetBonus(int _quantity, double _price)
