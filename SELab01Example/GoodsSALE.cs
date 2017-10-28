@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SELab01Example
 {
-    class GoodsSALE:Goods
+    public class GoodsSALE:Goods
     {
         public override int GetBonus(int _quantity, double _price)
         {

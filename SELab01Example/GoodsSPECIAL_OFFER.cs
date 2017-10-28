@@ -8,7 +8,7 @@ namespace SELab01Example
         {
         }
 
-        public override int GetBonus(int _quantity, double _price)
+       public override int GetBonus(int _quantity, double _price)
         {
             return 0;
         }

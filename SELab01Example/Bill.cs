@@ -67,24 +67,17 @@ namespace SELab01Example
             string result = GetHeader();
             while (items.MoveNext())
             {
+                double sum_with_discount = 0;
+                double usedBonus = 0;
+                double thisAmount = 0;
                 Item each = (Item)items.Current;
                 //определить сумму для каждой строки
                 double discount = each.GetDiscount();
                 int bonus = each.GetBonus();
                 // сумма
-                double thisAmount = each.getQuantity() * each.getPrice();
-                // используем бонусы
-                if ((each.getGoods().getPriceCode() ==
-                Goods.REGULAR) && each.getQuantity() > 5)
-                    discount +=
-                    _customer.useBonus((int)(each.getQuantity() * each.getPrice()));
-                if ((each.getGoods().getPriceCode() ==
-                Goods.SPECIAL_OFFER) && each.getQuantity() > 1)
-                    discount =
-                    _customer.useBonus((int)(each.getQuantity() * each.getPrice()));
-                // учитываем скидку
-                thisAmount =
-                each.getQuantity() * each.getPrice() - discount;
+                sum_with_discount = each.GetSum() - discount;
+                usedBonus = GetUsedBonus(each, sum_with_discount, discount);
+                thisAmount = sum_with_discount - usedBonus;
                 //показать результаты
                 result += GetItemString(thisAmount, discount, bonus, each);
                 totalAmount += thisAmount;

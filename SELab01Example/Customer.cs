@@ -10,13 +10,13 @@ namespace SELab01Example
     public class Customer
     {
         private int bonus;
-        private String name;
-        public Customer(String name, int bonus)
+        private string name;
+        public Customer(string name, int bonus)
         {
             this.name = name;
             this.bonus = bonus;
         }
-        public String getName()
+        public string getName()
         {
             return name;
         }
