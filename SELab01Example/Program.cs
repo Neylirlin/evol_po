@@ -8,13 +8,8 @@ namespace SELab01Example
 {
     class Program
     {
-        static void Main(string[] args)
+        public static string Method(TextReader sr)
         {
-            string filename = "BillInfo.yaml";
-            if (args.Length == 1)
-                filename = args[0];
-            FileStream fs = new FileStream(filename, FileMode.Open);
-            StreamReader sr = new StreamReader(fs);
             // read customer
             string line = sr.ReadLine();
             string[] result = line.Split(':');
@@ -33,7 +28,6 @@ namespace SELab01Example
             Goods[] g = new Goods[goodsQty];
             for (int i = 0; i < g.Length; i++)
             {
-                // Пропустить комментарии
                 do
                 {
                     line = sr.ReadLine();
@@ -57,7 +51,6 @@ namespace SELab01Example
                 g[i] = t;
             }
             // read items count
-            // Пропустить комментарии
             do
             {
                 line = sr.ReadLine();
@@ -66,7 +59,6 @@ namespace SELab01Example
             int itemsQty = Convert.ToInt32(result[1].Trim());
             for (int i = 0; i < itemsQty; i++)
             {
-                // Пропустить комментарии
                 do
                 {
                     line = sr.ReadLine();
@@ -79,7 +71,16 @@ namespace SELab01Example
                 b.addGoods(new Item(g[gid - 1], qty, price));
             }
             string bill = b.GenerateBill();
-            Console.WriteLine(bill);
+            return bill;
+        }
+        static void Main(string[] args)
+        {
+            string filename = "BillInfo.yaml";
+            if (args.Length == 1)
+                filename = args[0];
+            FileStream fs = new FileStream(filename, FileMode.Open);
+            StreamReader sr = new StreamReader(fs);
+            Console.WriteLine(Method(sr));
             Console.ReadKey();
         }
     }
