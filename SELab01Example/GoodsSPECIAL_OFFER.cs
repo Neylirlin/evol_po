@@ -1,7 +1,7 @@
 ﻿using System;
 
-namespace SELab01Example
-{
+/*namespace SELab01Example
+{ 
     public class GoodsSPECIAL_OFFER : Goods
     {
         public GoodsSPECIAL_OFFER(string title) : base(title)
@@ -22,4 +22,4 @@ namespace SELab01Example
             return discount;
         }
     }
-}
+}*/

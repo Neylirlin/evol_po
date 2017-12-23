@@ -30,18 +30,27 @@ namespace SELab01Example
         {
             return _Goods;
         }
+        public void setGoods(Goods arg)
+        {
+            _Goods = arg;
+        }
+        public void setGoodsType(Goods arg)
+        {
+            _Goods = arg;
+        }
         public double GetSum()
         {
             double get_sum = getQuantity() * getPrice();
             return get_sum;
         }
-        public int GetBonus()
+        public int ExecuteOperationBonus()
         {
-            return _Goods.GetBonus(_quantity, _price);
+            return _Goods.ExecuteOperationBonus(_quantity, _price);
         }
-        public double GetDiscount()
+        //прокси-метод GetDiscount()
+        public double ExecuteOperationDiscount()
         {
-            return _Goods.GetDiscount(_quantity, _price);
+            return _Goods.ExecuteOperationDiscount(_quantity, _price);
         }
     }
 }

@@ -11,14 +11,10 @@ namespace SELab01Example
         IPresenter p;
         private List<Item> _items;
         public Customer _customer;
-        public BillGenerator(Customer customer)
+        public BillGenerator(Customer customer, IPresenter p)
         {
             _customer = customer;
             _items = new List<Item>();
-        }
-
-        public BillGenerator(Customer customer, IPresenter p) : this(customer)
-        {
             this.p = p;
         }
 
@@ -30,11 +26,11 @@ namespace SELab01Example
         public double GetUsedBonus(Item each, double thisAmount, double discount)
         {
             double usedBonus = 0;
-            if (each.getGoods().GetType() == typeof(GoodsREGULAR) && each.getQuantity() > 5)
+            if (each.getGoods().GetType() == typeof(Goods) && each.getQuantity() > 5)
             {
                 usedBonus += _customer.useBonus((int)(thisAmount - discount));
             }
-            if (each.getGoods().GetType() == typeof(GoodsSPECIAL_OFFER) && each.getQuantity() > 1)
+            if (each.getGoods().GetType() == typeof(BONUS_GoodsSPECIAL_OFFER) && each.getQuantity() > 1)
             {
                 usedBonus += _customer.useBonus((int)(thisAmount - discount));
             }
@@ -54,8 +50,8 @@ namespace SELab01Example
                 double thisAmount = 0;
                 Item each = items.Current;
                 //определить сумму для каждой строки
-                double discount = each.GetDiscount();
-                int bonus = each.GetBonus();
+                double discount = each.ExecuteOperationDiscount();
+                int bonus = each.ExecuteOperationBonus();
                 // сумма
                 sum_with_discount = each.GetSum() - discount;
                 usedBonus = GetUsedBonus(each, sum_with_discount, discount);
@@ -70,6 +66,18 @@ namespace SELab01Example
             //Запомнить бонус клиента
             _customer.receiveBonus(totalBonus);
             return result;
+        }
+        public IPresenter Preseter
+        {
+            get
+            {
+                return p;
+            }
+            set
+            {
+                p = value;
+
+            }
         }
     }
 }

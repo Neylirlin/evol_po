@@ -10,17 +10,31 @@ namespace SELab01Example
     {
         public Goods Create(string type, string name)
         {
+            IBonusStrategy bonus = null;
+            IDiscountStrategy discount = null;
             Goods goods = null;
             switch (type)
             {
                 case "REG":
-                    goods = new GoodsREGULAR(name);
+                    {
+                        bonus = new BONUS_GoodsREGULAR ();
+                        discount = new DISCONT_GoodsREGULAR();
+                        goods = new Goods(name, bonus, discount);
+                    }
                     break;
                 case "SAL":
-                    goods = new GoodsSALE(name);
+                    {
+                        bonus = new BONUS_GoodsSALE();
+                        discount = new DISCONT_GoodsSALE();
+                        goods = new Goods(name, bonus, discount);
+                    }
                     break;
                 case "SPO":
-                    goods = new GoodsSPECIAL_OFFER(name);
+                    {
+                        bonus = new BONUS_GoodsSPECIAL_OFFER();
+                        discount = new DISCONT_GoodsSPECIAL_OFFER();
+                        goods = new Goods(name, bonus, discount);
+                    }
                     break;
             }
             return goods;

@@ -14,7 +14,9 @@ namespace SELab01ExampleTest
         [Test()]
         public void Cola_Test()
         {
-            Goods cola = new GoodsREGULAR("Cola");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            Goods cola = new Goods("Cola", bonus, discount);
             Item i1 = new Item(cola, 6, 65);
             Customer x = new Customer("test", 10);
             IPresenter p = new TXTPresenter();
@@ -28,7 +30,9 @@ namespace SELab01ExampleTest
         [Test()]
         public void Pepsi_Test()
         {
-            Goods pepsi = new GoodsREGULAR("Pepsi");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            Goods pepsi = new Goods("Pepsi", bonus, discount);
             Item i1 = new Item(pepsi, 3, 50);
             Customer x = new Customer("test", 10);
             IPresenter p = new TXTPresenter();
@@ -42,7 +46,9 @@ namespace SELab01ExampleTest
         [Test()]
         public void Fanta_Test()
         {
-            Goods fanta = new GoodsREGULAR("Fanta");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            Goods fanta = new Goods("Fanta", bonus, discount);
             Item i1 = new Item(fanta, 1, 35);
             Customer x = new Customer("test", 10);
             IPresenter p = new TXTPresenter();
@@ -56,8 +62,12 @@ namespace SELab01ExampleTest
         [Test()]
         public void Cola_Pepsi_Test()
         {
-            Goods cola = new GoodsREGULAR("Cola");
-            Goods pepsi = new GoodsSALE("Pepsi");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            IBonusStrategy bonus1 = new BONUS_GoodsSALE();
+            IDiscountStrategy discount1 = new DISCONT_GoodsSALE();
+            Goods cola = new Goods("Cola", bonus, discount);
+            Goods pepsi = new Goods("Pepsi", bonus1, discount1);
             Item i1 = new Item(cola, 6, 65);
             Item i2 = new Item(pepsi, 3, 50);
             Customer x = new Customer("test", 10);
@@ -73,8 +83,12 @@ namespace SELab01ExampleTest
         [Test()]
         public void Cola_Fanta_Test()
         {
-            Goods cola = new GoodsREGULAR("Cola");
-            Goods fanta = new GoodsSALE("Fanta");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            IBonusStrategy bonus1 = new BONUS_GoodsSALE();
+            IDiscountStrategy discount1 = new DISCONT_GoodsSALE();
+            Goods cola = new Goods("Cola", bonus, discount);
+            Goods fanta = new Goods("Fanta", bonus1, discount1);
             Item i1 = new Item(cola, 6, 65);
             Item i2 = new Item(fanta, 1, 35);
             Customer x = new Customer("test", 10);
@@ -90,8 +104,12 @@ namespace SELab01ExampleTest
         [Test()]
         public void Pepsi_Fanta_Test()
         {
-            Goods pepsi = new GoodsREGULAR("Pepsi");
-            Goods fanta = new GoodsSALE("Fanta");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            IBonusStrategy bonus1 = new BONUS_GoodsSALE();
+            IDiscountStrategy discount1 = new DISCONT_GoodsSALE();
+            Goods pepsi = new Goods("Pepsi", bonus, discount);
+            Goods fanta = new Goods("Fanta", bonus1, discount1);
             Item i1 = new Item(pepsi, 3, 50);
             Item i2 = new Item(fanta, 1, 35);
             Customer x = new Customer("test", 10);
@@ -107,9 +125,13 @@ namespace SELab01ExampleTest
         [Test()]
         public void Cola_Pepsi_Fanta_Test()
         {
-            Goods cola = new GoodsREGULAR("Cola");
-            Goods pepsi = new GoodsREGULAR("Pepsi");
-            Goods fanta = new GoodsSALE("Fanta");
+            IBonusStrategy bonus = new BONUS_GoodsREGULAR(); ;
+            IDiscountStrategy discount = new DISCONT_GoodsREGULAR();
+            IBonusStrategy bonus1 = new BONUS_GoodsSALE();
+            IDiscountStrategy discount1 = new DISCONT_GoodsSALE();
+            Goods cola = new Goods("Cola", bonus, discount);
+            Goods pepsi = new Goods("Pepsi", bonus, discount);
+            Goods fanta = new Goods("Fanta", bonus1, discount1);
             Item i1 = new Item(cola, 6, 65);
             Item i2 = new Item(pepsi, 3, 50);
             Item i3 = new Item(fanta, 1, 35);

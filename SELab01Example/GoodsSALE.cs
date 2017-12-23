@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SELab01Example
-{
+/*namespace SELab01Example
+{ 
     public class GoodsSALE:Goods
     {
         public override int GetBonus(int _quantity, double _price)
@@ -27,3 +27,4 @@ namespace SELab01Example
         }
     }
 }
+*/

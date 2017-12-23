@@ -8,7 +8,7 @@ namespace SELab01Example
 {
     class Program
     {
-        public static string Method(TextReader sr)
+/*        public static string Method(TextReader sr)
         {
             // read customer
             string line = sr.ReadLine();
@@ -72,15 +72,12 @@ namespace SELab01Example
             }
             string bill = b.GenerateBill();
             return bill;
-        }
+        }*/
         static void Main(string[] args)
         {
-            string filename = "BillInfo.yaml";
-            if (args.Length == 1)
-                filename = args[0];
-            FileStream fs = new FileStream(filename, FileMode.Open);
-            StreamReader sr = new StreamReader(fs);
-            Console.WriteLine(Method(sr));
+            YAMLFile file = new YAMLFile();
+            string bill = file.CreateBill(args);
+            Console.WriteLine(bill);
             Console.ReadKey();
         }
     }
