@@ -17,3 +17,5 @@ C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bi
 C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bin\Debug\SELab01Example.pdb
 C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bin\Debug\nunit.framework.dll
 C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bin\Debug\nunit.framework.xml
+C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bin\Debug\ClassLibrary.dll
+C:\Users\ACER\Desktop\ЭволПО\проект\SELab01Example\SELab01Example\bin\Debug\ClassLibrary.pdb

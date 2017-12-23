@@ -9,9 +9,9 @@ namespace SELab01Example
 {
     public abstract class AbstractContentFile
     {
-        public string CreateBill(string[] args)
+        public string CreateBill()
         {
-            StreamReader stream_reader = SetSource(args);
+            StreamReader stream_reader = SetSource();
             string name = GetCustomer(stream_reader);
             int bonus = GetBonus(stream_reader);
             Customer customer = new Customer(name, bonus);
@@ -26,7 +26,7 @@ namespace SELab01Example
             return bill;
         }
 
-        public abstract StreamReader SetSource(string[] args);
+        public abstract StreamReader SetSource();
         public abstract string GetCustomer(StreamReader stream_reader);
         public abstract int GetBonus(StreamReader stream_reader);
         public abstract int GetGoodsCount(StreamReader stream_reader);

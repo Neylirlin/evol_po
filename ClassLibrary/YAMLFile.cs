@@ -7,13 +7,11 @@ using System.IO;
 
 namespace SELab01Example
 {
-    class YAMLFile : AbstractContentFile
+    public class YAMLFile : AbstractContentFile
     {
-        public override StreamReader SetSource(string[] args)
+        public override StreamReader SetSource()
         {
             string filename = "BillInfo.yaml";
-            if (args.Length == 1)
-                filename = args[0];
             FileStream file_stream = new FileStream(filename, FileMode.Open);
             StreamReader stream_reader = new StreamReader(file_stream);
             return stream_reader;
